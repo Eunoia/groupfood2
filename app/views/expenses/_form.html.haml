@@ -5,7 +5,10 @@
       %ul
         - @expense.errors.full_messages.each do |msg|
           %li= msg
-
+  .field
+    = f.label :member
+    = @member.name
+    = f.hidden_field :member_id, value: @member.id.to_s
   .field
     = f.label :title
     = f.text_field :title
